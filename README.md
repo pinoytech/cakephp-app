@@ -1,4 +1,4 @@
 Blog Application Using CakePHP
 =======
 
-I wrote this application to learn CakePHP.
+I wrote this application to learn CakePHP 2+.
