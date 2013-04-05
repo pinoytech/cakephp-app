@@ -1,0 +1,5 @@
+app/Config/database.php
+app/Config/email.php
+app/Config/security.php
+.idea/
+lib/Cake/
