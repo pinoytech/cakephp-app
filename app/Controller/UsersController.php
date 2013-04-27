@@ -98,17 +98,6 @@ class UsersController extends AppController {
         }
     }
 
-    private function _sendEmail($user, $random_string) {
-        $email = new CakeEmail('smtp');
-        $email->template('forgot_password');
-        $email->viewVars(array(
-            'activationLink' => Router::url("/users/reset_password/?key={$random_string}", TRUE)
-        ));
-        $email->to($user['User']['email']);
-        $email->subject(__('Forget Your Password'));
-        $email->send();
-    }
-
     public function forgot_password() {
         if ($this->Session->read('Auth.User')) {
             $this->Session->setFlash(__('You are already logged in.'), 'alert-info');
@@ -186,5 +175,16 @@ class UsersController extends AppController {
         }
         $this->Session->setFlash(__('User was not deleted'));
         $this->redirect(array('action' => 'index'));
+    }
+
+    private function _sendEmail($user, $random_string) {
+        $email = new CakeEmail('smtp');
+        $email->template('forgot_password');
+        $email->viewVars(array(
+            'activationLink' => Router::url("/users/reset_password/?key={$random_string}", TRUE)
+        ));
+        $email->to($user['User']['email']);
+        $email->subject(__('Forget Your Password'));
+        $email->send();
     }
 }
