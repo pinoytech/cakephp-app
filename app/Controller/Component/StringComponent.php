@@ -21,7 +21,6 @@ class StringComponent extends Component {
             $str .= substr($pool, mt_rand(0, strlen($pool) -1), 1);
         }
         return $str;
-        break;
     }
 
 }

@@ -1,10 +1,17 @@
+/* Regular */
+
 body {
     background: #F2F2F2;
+    background-image: url('../img/body_background.png');
 }
 
+.body {}
+
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Sanchez', serif;
+    font-family: 'Alef', sans-serif;
+    text-shadow: #fff 0px 1px 1px;
 }
+
 .header {
 	margin-bottom: 20px;
 }
@@ -45,4 +52,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .post-footer {
     font-style: italic;
+}
+
+.divider {
+    margin: 30px 0 50px 0;
 }

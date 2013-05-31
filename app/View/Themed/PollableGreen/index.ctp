@@ -4,6 +4,7 @@
         "/{$post[0]['year']}/{$post[0]['month']}/{$post[0]['day']}/{$post['Post']['slug']}"
         );?></h3>
         <?php echo $post['Post']['body'];?>
+        <?php echo $key;?>
         <?php if ($key < count($posts) - 1):?>
         <div class="progress divider">
             <div class="bar bar-info progress-striped active" style="width: 15%;"></div>

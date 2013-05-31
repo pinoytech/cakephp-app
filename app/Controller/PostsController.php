@@ -28,7 +28,7 @@ class PostsController extends AppController {
             'order' => array(
                 'Post.created' => 'DESC'
             ),
-            'limit' => 8,
+            'limit' => 2,
             'paramType' => 'querystring'
         );
 
@@ -107,17 +107,18 @@ class PostsController extends AppController {
             throw new MethodNotAllowedException();
         }
 
-        $this->Site->id = $id;
+        $this->Post->id = $id;
 
-        if (!$this->Site->exists()) {
-            throw new NotFoundException(__('Invalid Site'));
+        if (!$this->Post->exists()) {
+            throw new NotFoundException(__('Invalid Post'));
         }
 
-        if ($this->Site->delete()) {
-            $this->Session->setFlash(__('Site deleted'));
+        if ($this->Post->delete()) {
+            $this->Session->setFlash(__('Post deleted'));
+        } else {
+            $this->Session->setFlash(__('Post was not deleted'));
         }
 
-        $this->Session->setFlash(__('Site was not deleted'));
         $this->redirect(array('action' => 'index'));
     }
 }

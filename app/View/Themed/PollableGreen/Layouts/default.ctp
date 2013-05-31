@@ -4,9 +4,10 @@
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <title>Thorpe Obazee <?php echo isset($post)? "&dash; {$post['Post']['title']}" : '';?></title>
 <?php echo $this->Html->css('bootstrap.min'); ?>
-<?php echo $this->Html->css('http://fonts.googleapis.com/css?family=Sanchez:400italic,400'); ?>
+<?php echo $this->Html->css('prism'); ?>
+<?php echo $this->Html->css('http://fonts.googleapis.com/css?family=Alef:400,700'); ?>
 <?php echo $this->Html->css('style'); ?>
-<meta property="og:site_name" content="Pollable Stats"/>
+<meta property="og:site_name" content="Thorpe Obazee"/>
 <?php echo $this->Html->script('jquery.min'); ?>
 </head>
 <body>
@@ -29,5 +30,6 @@ $(function(){
 });
 </script>
 <?php echo $this->Html->script('bootstrap.min'); ?>
+<?php echo $this->Html->script('prism'); ?>
 </body>
 </html>
