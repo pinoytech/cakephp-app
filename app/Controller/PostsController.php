@@ -1,9 +1,13 @@
 <?php
 
+App::uses('CakeTime', 'Utility');
+
 class PostsController extends AppController {
 
+    public $components = array('Paginator', 'RequestHandler');
+
     public function beforeFilter() {
-        $this->Auth->allow('index', 'view');
+        $this->Auth->allow('index', 'view', 'sitemap', 'archives');
     }
 
     public function isAuthorized($user) {
@@ -14,27 +18,39 @@ class PostsController extends AppController {
         return parent::isAuthorized($user);
     }
 
-    public function index() {
+    public function sitemap(){
+        $sitemap = $this->Post->generateSiteMap();
+        // Render view and don't use specific view engines
+        $this->RequestHandler->respondAs($this->request->params['ext']);
+
+        $this->set('sitemap', $sitemap);
+    }
+
+    public function archives() {
         $this->response->cache('-1 minute', '+2 week');
-        $this->paginate = array(
-            'contain' => array(),
-            'fields' => array(
-                'body', 'title', 'slug',
-                "DATE_FORMAT(created, '%Y') as year",
-                "DATE_FORMAT(created, '%m') as month",
-                "DATE_FORMAT(created, '%e') as day",
-                "DATE_FORMAT(created, '%e %b %Y') as created"
-            ),
+
+        $posts = $this->Post->find('all', array(
+            'fields' => array('body', 'title', 'slug', "year", "month", "day", "created"),
             'order' => array(
                 'Post.created' => 'DESC'
-            ),
-            'limit' => 2,
-            'paramType' => 'querystring'
-        );
-
-        $this->set('posts', $this->paginate('Post'));
-        $this->set('pagination_model', 'Post');
+            )
+        ));
+        $this->set('posts', $posts);
     }
+
+    public function index() {
+        $this->response->cache('-1 minute', '+2 week');
+
+        $posts = $this->Post->find('all', array(
+            'limit' => 2,
+            'fields' => array('body', 'title', 'slug', "year", "month", "day", "created"),
+            'order' => array(
+                'Post.created' => 'DESC'
+            )
+        ));
+        $this->set('posts', $posts);
+    }
+
 
     public function admin_add() {
         if ($this->request->is('post')) {
@@ -61,9 +77,8 @@ class PostsController extends AppController {
     }
 
     public function admin_edit($id = null) {
-        $this->Post->id = $id;
 
-        if (!$this->Post->exists()) {
+        if (!$this->Post->exists($id)) {
             throw new NotFoundException(__('Invalid Post'));
         }
 

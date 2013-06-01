@@ -39,7 +39,7 @@
             'year' => '[0-9]{4}',
             'month' => '[0-9]{1,2}',
             'day' => '[0-9]{1,2}',
-            'slug' => '[a-z0-9_]+'
+            'slug' => '[a-z0-9_\-]+'
         )
     );
 
@@ -47,6 +47,8 @@
     Router::connect('/admin/blogs/*', array('controller' => 'posts', 'action' => 'index' ,'admin' => true));
     Router::connect('/blogs/:action/*', array('controller' => 'posts'));
     Router::connect('/blogs/*', array('controller' => 'posts', 'action' => 'index'));
+    Router::connect('/sitemap.xml', array('controller' => 'posts', 'action' => 'sitemap', 'ext' => 'xml'));
+    Router::connect('/sitemap.json', array('controller' => 'posts', 'action' => 'sitemap', 'ext' => 'json'));
     Router::connect('/', array('controller' => 'posts', 'action' => 'index'));
 /**
  * ...and connect the rest of 'Pages' controller's urls.

@@ -4,6 +4,8 @@
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <title>Thorpe Obazee <?php echo isset($post)? "&dash; {$post['Post']['title']}" : '';?></title>
 <?php echo $this->Html->css('bootstrap.min'); ?>
+<?php echo $this->Html->css('font-awesome.min'); ?>
+<?php echo $this->Html->css('font-awesome-ie7.min'); ?>
 <?php echo $this->Html->css('prism'); ?>
 <?php echo $this->Html->css('http://fonts.googleapis.com/css?family=Alef:400,700'); ?>
 <?php echo $this->Html->css('style'); ?>

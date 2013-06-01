@@ -1,8 +1,14 @@
 <div class="offset2 span8 margin-bottom body">
     <?php foreach ($posts as $key => $post):?>
-        <h3><?php echo $this->Html->link($post['Post']['title'],
-        "/{$post[0]['year']}/{$post[0]['month']}/{$post[0]['day']}/{$post['Post']['slug']}"
-        );?></h3>
+         <h3><?php
+            echo $this->Html->link($post['Post']['title'], array(
+            'controller' => 'posts',
+            'action' => 'view',
+            'year' => $post['Post']['year'],
+            'month' => $post['Post']['month'],
+            'day' => $post['Post']['day'],
+            'slug' => $post['Post']['slug']
+        ));?></h3>
         <?php echo $post['Post']['body'];?>
         <?php if ($key < count($posts) - 1):?>
         <div class="progress divider">
@@ -13,5 +19,4 @@
         </div>
         <?php endif;?>
     <?php endforeach; ?>
-    <?php echo $this->element('blog/pagination');?>
 </div>
