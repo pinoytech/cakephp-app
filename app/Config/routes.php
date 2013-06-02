@@ -45,10 +45,9 @@
 
     Router::connect('/admin/blogs/:action/*', array('controller' => 'posts', 'admin' => true));
     Router::connect('/admin/blogs/*', array('controller' => 'posts', 'action' => 'index' ,'admin' => true));
-    Router::connect('/blogs/:action/*', array('controller' => 'posts'));
-    Router::connect('/blogs/*', array('controller' => 'posts', 'action' => 'index'));
     Router::connect('/sitemap.xml', array('controller' => 'posts', 'action' => 'sitemap', 'ext' => 'xml'));
     Router::connect('/sitemap.json', array('controller' => 'posts', 'action' => 'sitemap', 'ext' => 'json'));
+    Router::connect('/archives', array('controller' => 'posts', 'action' => 'archives'));
     Router::connect('/', array('controller' => 'posts', 'action' => 'index'));
 /**
  * ...and connect the rest of 'Pages' controller's urls.
