@@ -48,6 +48,7 @@
     Router::connect('/sitemap.xml', array('controller' => 'posts', 'action' => 'sitemap', 'ext' => 'xml'));
     Router::connect('/sitemap.json', array('controller' => 'posts', 'action' => 'sitemap', 'ext' => 'json'));
     Router::connect('/archives', array('controller' => 'posts', 'action' => 'archives'));
+    Router::connect('/feed.rss', array('controller' => 'posts', 'action' => 'feed', 'ext' => 'rss'));
     Router::connect('/', array('controller' => 'posts', 'action' => 'index'));
 /**
  * ...and connect the rest of 'Pages' controller's urls.
@@ -59,6 +60,7 @@
  * how to customize the loading of plugin routes.
  */
 	CakePlugin::routes();
+    Router::parseExtensions('rss');
 
 /**
  * Load the CakePHP default routes. Only remove this if you do not want to use

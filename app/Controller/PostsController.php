@@ -4,10 +4,11 @@ App::uses('CakeTime', 'Utility');
 
 class PostsController extends AppController {
 
-    public $components = array('Paginator', 'RequestHandler');
+    public $components = array('RequestHandler');
+    public $helpers = array('Text');
 
     public function beforeFilter() {
-        $this->Auth->allow('index', 'view', 'sitemap', 'archives');
+        $this->Auth->allow('index', 'view', 'sitemap', 'archives', 'feed');
     }
 
     public function isAuthorized($user) {
@@ -36,6 +37,20 @@ class PostsController extends AppController {
             )
         ));
         $this->set('posts', $posts);
+    }
+
+    public function feed() {
+        if ($this->RequestHandler->isRss()) {
+            $posts = $this->Post->find('all',
+                array(
+                    'limit' => 20,
+                    'order' => 'Post.id DESC'
+                )
+            );
+            $this->set(compact('posts'));
+        } else {
+            throw new NotFoundException();
+        }
     }
 
     public function index() {
@@ -96,16 +111,7 @@ class PostsController extends AppController {
         $this->response->cache('-1 minute', '+2 week');
         $post = $this->Post->find('first', array(
             'contain' => array(),
-            'fields' => array(
-                'body', 'title', 'slug',
-                "DATE_FORMAT(created, '%Y') as year",
-                "DATE_FORMAT(created, '%m') as month",
-                "DATE_FORMAT(created, '%e') as day",
-                "DATE_FORMAT(created, '%e %b %Y') as created",
-                'title',
-                'body',
-                'modified'
-            ),
+            'fields' => array('body', 'title', 'slug', "year", "month", "day", "created", 'modified'),
             'conditions' => array(
                 'YEAR(created)' => $year,
                 'MONTH(created)' => $month,

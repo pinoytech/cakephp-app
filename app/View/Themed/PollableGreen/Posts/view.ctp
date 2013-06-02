@@ -1,8 +1,19 @@
+<?php $this->append('header');?>
+<meta property="og:title" content="<?php echo $post['Post']['title'];?>"/>
+<meta property="og:url" content="<?php echo Router::url(array(
+    'controller' => 'posts',
+    'action' => 'view',
+    'year' => $post['Post']['year'],
+    'month' => $post['Post']['month'],
+    'day' => $post['Post']['day'],
+    'slug' => $post['Post']['slug']
+));?>"/>
+<?php $this->end();?>
 <div class="offset2 span8 margin-bottom body">
     <div class="row">
         <div class="span8">
             <h2><?php echo $post['Post']['title'];?></h2>
-            <p class="muted"><?php echo $post[0]['created'];?></p>
+            <p class="muted"><?php echo $post['Post']['created'];?></p>
             <?php echo $post['Post']['body'];?>
 
         </div>
