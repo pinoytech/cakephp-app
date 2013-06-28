@@ -1,6 +1,7 @@
 <?php
 
 App::uses('CakeTime', 'Utility');
+App::import('Blog.Vendor', 'Textile');
 
 class PostsController extends BlogAppController {
 
@@ -10,6 +11,7 @@ class PostsController extends BlogAppController {
 
     public function beforeFilter() {
         $this->Auth->allow('index', 'view', 'sitemap', 'archives', 'feed');
+        $this->Textile = new Textile;
     }
 
     public function isAuthorized($user) {
@@ -70,6 +72,7 @@ class PostsController extends BlogAppController {
 
     public function admin_add() {
         if ($this->request->is('post')) {
+            $this->request->data['Post']['body'] = $this->Textile->TextileThis($this->request->data['Post']['textile']);
             if ($this->Post->save($this->request->data)) {
                 $this->Session->setFlash('Your Blog has been saved.', 'alert-info');
                 $this->redirect(array('action' => 'admin_add'));
@@ -99,9 +102,10 @@ class PostsController extends BlogAppController {
         }
 
         if ($this->request->is('put') || $this->request->is('post')) {
+            $this->request->data['Post']['body'] = $this->Textile->TextileThis($this->request->data['Post']['textile']);
             if ($this->Post->save($this->request->data)) {
                 $this->Session->setFlash('Your Blog has been saved.', 'alert-info');
-                // $this->redirect($this->here);
+                $this->redirect($this->here);
             }
         } else {
             $this->request->data = $this->Post->findById($id);
