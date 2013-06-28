@@ -21,7 +21,6 @@
         <?php echo $this->element('footer', array());?>
     </div>
 </div>
-<?php echo $this->element('sql_dump'); ?>
 <!-- end .container_16 -->
 <script>
 $(function(){

@@ -36,5 +36,6 @@ $(function(){
 </script>
 <?php echo $this->Html->script('bootstrap.min'); ?>
 <?php echo $this->Html->script('prism'); ?>
+<?php echo $this->fetch('script');?>
 </body>
 </html>

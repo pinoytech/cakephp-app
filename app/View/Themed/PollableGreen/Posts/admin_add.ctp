@@ -1,4 +1,4 @@
-<div class="offset1 span10">
+<div class="offset2 span8">
     <?php echo $this->Form->create('Post', array(
             'inputDefaults' => array(
                 'format' => array('before', 'label', 'between', 'input', 'error', 'after'),

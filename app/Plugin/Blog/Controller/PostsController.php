@@ -2,8 +2,9 @@
 
 App::uses('CakeTime', 'Utility');
 
-class PostsController extends AppController {
+class PostsController extends BlogAppController {
 
+    public $uses = array('Blog.Post');
     public $components = array('RequestHandler');
     public $helpers = array('Text');
 
@@ -81,7 +82,7 @@ class PostsController extends AppController {
         $this->paginate = array(
             'contain' => array(),
             'order' => array(
-                'Post.created' => 'DESC'
+                'Post.id' => 'DESC'
             ),
             'limit' => 8,
             'paramType' => 'querystring'
@@ -116,6 +117,7 @@ class PostsController extends AppController {
                 'YEAR(created)' => $year,
                 'MONTH(created)' => $month,
                 'DAY(created)' => $day,
+                'slug' => $slug,
             )
         ));
 

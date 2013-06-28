@@ -179,3 +179,9 @@ CakeLog::config('error', array(
 	'types' => array('warning', 'error', 'critical', 'alert', 'emergency'),
 	'file' => 'error',
 ));
+
+CakePlugin::load('ContactForm', array('bootstrap' => false, 'routes' => true));
+
+CakePlugin::load('Blog', array('bootstrap' => false, 'routes' => true));
+
+CakePlugin::load('Gallery', array('bootstrap' => false, 'routes' => false));

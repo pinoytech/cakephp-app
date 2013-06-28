@@ -1,6 +1,6 @@
 <?php
 
-class Post extends AppModel {
+class Post extends BlogAppModel {
     public $name = 'Post';
     public $actsAs = array(
         'Sluggable' => array(
@@ -55,6 +55,7 @@ class Post extends AppModel {
         foreach ($results as $result) {
             $sitemap[] = array(
                 'loc' => array(
+                    'plugin' => 'blog',
                     'controller' => 'posts',
                     'action' => 'view',
                     'year' => $result['Post']['year'],

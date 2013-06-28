@@ -32,24 +32,6 @@
         'action' => 'login',
     ));
 
-    Router::connect('/:year/:month/:day/:slug',
-        array('controller' => 'posts', 'action' => 'view'),
-        array(
-            'pass' => array('year', 'month', 'day', 'slug'),
-            'year' => '[0-9]{4}',
-            'month' => '[0-9]{1,2}',
-            'day' => '[0-9]{1,2}',
-            'slug' => '[a-z0-9_\-]+'
-        )
-    );
-
-    Router::connect('/admin/blogs/:action/*', array('controller' => 'posts', 'admin' => true));
-    Router::connect('/admin/blogs/*', array('controller' => 'posts', 'action' => 'index' ,'admin' => true));
-    Router::connect('/sitemap.xml', array('controller' => 'posts', 'action' => 'sitemap', 'ext' => 'xml'));
-    Router::connect('/sitemap.json', array('controller' => 'posts', 'action' => 'sitemap', 'ext' => 'json'));
-    Router::connect('/archives', array('controller' => 'posts', 'action' => 'archives'));
-    Router::connect('/feed.rss', array('controller' => 'posts', 'action' => 'feed', 'ext' => 'rss'));
-    Router::connect('/', array('controller' => 'posts', 'action' => 'index'));
 /**
  * ...and connect the rest of 'Pages' controller's urls.
  */
@@ -60,7 +42,6 @@
  * how to customize the loading of plugin routes.
  */
 	CakePlugin::routes();
-    Router::parseExtensions('rss');
 
 /**
  * Load the CakePHP default routes. Only remove this if you do not want to use

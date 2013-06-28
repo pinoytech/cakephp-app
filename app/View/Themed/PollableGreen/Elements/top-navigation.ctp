@@ -8,7 +8,7 @@
                         <?php if ($this->Session->read('Auth.User')):?>
                             <?php echo $this->element('top-navigation-user-menu');?>
                         <?php else: ?>
-                            <li><?php echo $this->Html->link('Sign In', array('controller' => 'users', 'action' => 'login'));?></li>
+                            <li><?php echo $this->Html->link('Sign In', array('plugin' => false, 'controller' => 'users', 'action' => 'login'));?></li>
                         <?php endif;?>
                     </ul>
                     <!--/nocache-->
