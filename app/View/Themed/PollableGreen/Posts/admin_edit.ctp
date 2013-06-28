@@ -13,6 +13,6 @@
     <?php echo $this->Form->input('id', array('type' => 'hidden'));?>
     <?php echo $this->Form->input('title', array('class' => 'span8'));?>
     <?php echo $this->Form->input('textile', array('id' => 'textarea', 'rows' => '25', 'class' => 'span8', 'label' => false));?>
-    <?php echo $this->Form->submit(__('Post'), array('class' => 'btn'));?>
+    <?php echo $this->Form->submit(__('Update'), array('class' => 'btn'));?>
     <?php echo $this->Form->end();?>
 </div>
