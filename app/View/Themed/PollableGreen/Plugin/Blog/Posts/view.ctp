@@ -1,4 +1,5 @@
 <?php $this->append('header');?>
+<title><?php echo $post['Post']['title'];?></title>
 <meta property="og:title" content="<?php echo $post['Post']['title'];?>"/>
 <meta property="og:url" content="<?php echo Router::url(array(
     'controller' => 'posts',

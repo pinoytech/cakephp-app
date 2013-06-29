@@ -11,8 +11,6 @@ class UsersController extends AppController {
         ),
     );
 
-    public $layout = 'post';
-
     public function beforeFilter() {
         parent::beforeFilter();
         $this->Auth->allow('logout', 'forgot_password', 'reset_password');

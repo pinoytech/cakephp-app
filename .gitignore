@@ -6,6 +6,7 @@ lib/Cake/
 /app/Config/database.php
 /app/Config/email.php
 /app/Config/security.php
+/app/Config/settings.php
 /app/tmp
 .sass-cache
 /lib/Cake/Console/Templates/skel/tmp/
