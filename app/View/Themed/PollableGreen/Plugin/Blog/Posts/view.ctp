@@ -13,21 +13,15 @@
 ));?>"/>
 <?php $this->end();?>
 <div class="offset2 span8 margin-bottom body">
-    <div class="row">
-        <div class="span8">
-            <h2><?php echo $post['Post']['title'];?></h2>
-            <p class="muted"><?php echo $post['Post']['created'];?></p>
-            <?php echo $post['Post']['body'];?>
-
-        </div>
+  <div class="row-fluid">
+    <div class="span12">
+      <h2><?php echo $post['Post']['title'];?></h2>
+      <p class="muted"><?php echo $post['Post']['created'];?></p>
+      <?php echo $post['Post']['body'];?>
     </div>
-</div>
-<div class='span2 margin-bottom'>
+  </div>
 </div>
 <div class="offset2 span8 margin-bottom margin-bottom post-footer">
-    <div class="row">
-        <div class="span8">
-            Comments are disabled. I'd like to hear your thoughts, though! Please send me a tweet via <?php echo $this->Html->link('@obazee', 'http://twitter.com/obazee');?>.
-        </div>
-    </div>
+  <small class="muted">DISCLAIMER:</small>
+  <small class="muted">The thoughts and opinions expressed here are mine alone, and are not necessarily shared by any other living person.</small>
 </div>
