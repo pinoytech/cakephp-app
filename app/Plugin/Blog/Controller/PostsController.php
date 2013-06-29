@@ -50,6 +50,8 @@ class PostsController extends BlogAppController {
                     'order' => 'Post.id DESC'
                 )
             );
+
+            $this->RequestHandler->respondAs($this->request->params['ext']);
             $this->set(compact('posts'));
         } else {
             throw new NotFoundException();
