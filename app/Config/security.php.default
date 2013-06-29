@@ -1,0 +1,10 @@
+<?php
+/**
+ * A random string used in security hashing methods.
+ */
+    Configure::write('Security.salt', 'ueidldpslerJfIxfs2guVoUubWwvniR2G0FgaC9mi8');
+
+/**
+ * A random numeric string (digits only) used to encrypt/decrypt strings.
+ */
+    Configure::write('Security.cipherSeed', '098765432174535424967496836458');

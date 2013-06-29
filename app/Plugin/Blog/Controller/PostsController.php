@@ -22,7 +22,7 @@ class PostsController extends BlogAppController {
         return parent::isAuthorized($user);
     }
 
-    public function sitemap(){
+    public function sitemap() {
         $sitemap = $this->Post->generateSiteMap();
         // Render view and don't use specific view engines
         $this->RequestHandler->respondAs($this->request->params['ext']);
@@ -87,7 +87,7 @@ class PostsController extends BlogAppController {
             'order' => array(
                 'Post.id' => 'DESC'
             ),
-            'limit' => 8,
+            'limit' => 20,
             'paramType' => 'querystring'
         );
 
@@ -116,7 +116,16 @@ class PostsController extends BlogAppController {
         $this->response->cache('-1 minute', '+2 week');
         $post = $this->Post->find('first', array(
             'contain' => array(),
-            'fields' => array('body', 'title', 'slug', "year", "month", "day", "created", 'modified'),
+            'fields' => array(
+                'body',
+                'title',
+                'slug',
+                "year",
+                "month",
+                "day",
+                "created",
+                'modified'
+            ),
             'conditions' => array(
                 'YEAR(created)' => $year,
                 'MONTH(created)' => $month,
