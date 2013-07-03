@@ -34,6 +34,9 @@ class PostsController extends BlogAppController {
         $this->response->cache('-1 minute', '+2 week');
 
         $posts = $this->Post->find('all', array(
+            'conditions' => array(
+                'Post.status' => 'published'
+            ),
             'fields' => array('body', 'title', 'slug', "year", "month", "day", 'created'),
             'order' => array(
                 'Post.id' => 'DESC'
@@ -46,6 +49,9 @@ class PostsController extends BlogAppController {
         if ($this->RequestHandler->isRss()) {
             $posts = $this->Post->find('all',
                 array(
+                    'conditions' => array(
+                        'Post.status' => 'published'
+                    ),
                     'limit' => 20,
                     'order' => 'Post.id DESC'
                 )
