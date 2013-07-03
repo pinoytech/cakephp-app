@@ -43,9 +43,9 @@ class AppController extends Controller {
                     'fields' => array('username' => 'email')
                 )
             ),
-            'loginAction' => array('controller' => 'users', 'action' => 'login', 'admin' => false),
-            'loginRedirect' => array('controller' => 'blogs', 'action' => 'add', 'admin' => true),
-            'logoutRedirect' => array('controller' => 'users', 'action' => 'login', 'admin' => false),
+            'loginAction' => array('plugin' => false, 'controller' => 'users', 'action' => 'login', 'admin' => false),
+            'loginRedirect' => array('plugin' => 'blog', 'controller' => 'posts', 'action' => 'add', 'admin' => true),
+            'logoutRedirect' => array('plugin' => false, 'controller' => 'users', 'action' => 'login', 'admin' => false),
             'authorize' => array('Controller')
         )
     );

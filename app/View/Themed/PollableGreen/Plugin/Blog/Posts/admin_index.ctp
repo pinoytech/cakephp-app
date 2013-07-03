@@ -3,6 +3,7 @@
     <tr>
       <td>ID</td>
       <td>Title</td>
+      <td>Status</td>
       <td>Created</td>
     </tr>
     <?php foreach ($posts as $post):?>
@@ -27,6 +28,7 @@
             ));
           ?>
         </td>
+        <td><?php echo ucfirst($post['Post']['status']);?></td>
         <td>
           <?php
             echo $this->Html->link(date('F d, Y', strtotime($post['Post']['created'])), array(

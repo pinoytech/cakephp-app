@@ -3,7 +3,7 @@
       <div class="navbar-inner">
           <div class="container">
               <div class="row">
-                  <div class="offset1 span10">
+                  <div class="offset2 span8">
                       <!--nocache-->
                       <ul class="nav pull-right">
                         <li class="dropdown active">
