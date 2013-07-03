@@ -96,7 +96,15 @@
  *		'persistent' => true, // [optional] set this to false for non-persistent connections
  *	));
  */
-Cache::config('default', array('engine' => 'File'));
+
+Cache::config('default', array(
+    'engine' => 'Apc', //[required]
+    'duration'=> 3600, //[optional]
+    'probability'=> 100, //[optional]
+    'prefix' => Inflector::slug(APP_DIR) . '_', //[optional]  prefix every cache file with this string
+));
+
+Cache::config('default', array('engine' => 'Apc'));
 
 /**
  * The settings below can be used to set additional paths to models, views and controllers.
