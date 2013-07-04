@@ -13,8 +13,8 @@
       <div class="clearfix"></div>
   </div>
   <div class="row-fluid">
-    <h3>Skills</h3>
     <div class="span12">
+      <h3>Skills</h3>
       <p>Having worked on tons of web projcts, I have acquired knowledge in a few languages and most recently, frameworks in PHP, Ruby and Javascript.</p>
       <ul>
           <li><?php echo $this->Html->link('CodeIgniter', 'http://www.codeigniter.com/');?></li>
