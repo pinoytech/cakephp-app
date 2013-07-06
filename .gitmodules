@@ -4,3 +4,6 @@
 [submodule "app/Plugin/Blog"]
 	path = app/Plugin/Blog
 	url = git@github.com:pinoytech/Blog.git
+[submodule "app/Plugin/Gallery"]
+	path = app/Plugin/Gallery
+	url = git@github.com:pinoytech/Gallery.git
