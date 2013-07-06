@@ -1,3 +1,6 @@
 [submodule "app/Plugin/ContactForm"]
 	path = app/Plugin/ContactForm
 	url = git@github.com:pinoytech/ContactForm.git
+[submodule "app/Plugin/Blog"]
+	path = app/Plugin/Blog
+	url = git@github.com:pinoytech/Blog.git
