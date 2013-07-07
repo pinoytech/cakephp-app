@@ -192,4 +192,6 @@ CakePlugin::load('ContactForm', array('bootstrap' => false, 'routes' => true));
 
 CakePlugin::load('Blog', array('bootstrap' => false, 'routes' => true));
 
-CakePlugin::load('Gallery', array('bootstrap' => false, 'routes' => false));
+CakePlugin::load('Gallery', array('bootstrap' => false, 'routes' => true));
+
+CakePlugin::load('Upload');
