@@ -35,9 +35,14 @@ body > .container {
       <div class="row-fluid">
           <?php echo $this->fetch('content'); ?>
           <?php echo $this->fetch('sidebar');?>
-          <div class="clearfix">&nbsp;</div>
-          <?php echo $this->element('footer', array());?>
       </div>
+  </div>
+</div>
+<div class="footer">
+  <div class="container">
+    <div class="row-fluid">
+      <?php echo $this->element('footer', array());?>
+    </div>
   </div>
 </div>
 <!-- end .container_16 -->

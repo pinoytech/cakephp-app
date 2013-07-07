@@ -1,18 +1,20 @@
-<div class="offset1 span10 navbar navbar-inverse footer">
-    <div class="navbar-inner">
-        <div class="container">
-            <ul class='nav'>
-                <li><?php echo $this->Html->link("&copy; Thorpe Obazee 2012 - 2013", 'http://thorpe-obazee.com/', array('escape' => false));?></li>
-            </ul>
-            <ul class='nav pull-right find-me'>
-                <li><?php echo $this->Html->link("Find me on: ", '/', array('escape' => false));?></li>
-                <li><?php echo $this->Html->link('<i class="icon-github-sign icon-large"></i>', 'http://github.com/pinoytech', array('escape' => false));?></li>
-                <li><?php echo $this->Html->link('<i class="icon-twitter-sign icon-large"></i>', 'http://twitter.com/obazee', array('escape' => false));?></li>
-                <li><?php echo $this->Html->link('<i class="icon-linkedin-sign icon-large"></i>', 'http://ph.linkedin.com/in/thorpeobazee', array('escape' => false));?></li>
-                <li><?php echo $this->Html->link('<i class="icon-rss-sign icon-large"></i>', '/feed.rss', array('escape' => false));?></li>
-            </ul>
-        </div>
+<div class="offset1 span10">
+  <div class="row-fluid">
+    <div class="span8">
+      <ul class='nav nav-pills'>
+          <li><?php echo $this->Html->link("&copy; Thorpe Obazee 2012 - 2013", 'http://thorpe-obazee.com/', array('escape' => false));?></li>
+      </ul>
     </div>
+    <div class="span4">
+      <ul class='nav nav-pills'>
+          <li><?php echo $this->Html->link("Find me on: ", '/', array('escape' => false));?></li>
+          <li><?php echo $this->Html->link('<i class="icon-github-sign icon-large"></i>', 'http://github.com/pinoytech', array('escape' => false));?></li>
+          <li><?php echo $this->Html->link('<i class="icon-twitter-sign icon-large"></i>', 'http://twitter.com/obazee', array('escape' => false));?></li>
+          <li><?php echo $this->Html->link('<i class="icon-linkedin-sign icon-large"></i>', 'http://ph.linkedin.com/in/thorpeobazee', array('escape' => false));?></li>
+          <li><?php echo $this->Html->link('<i class="icon-rss-sign icon-large"></i>', '/feed.rss', array('escape' => false));?></li>
+      </ul>
+    </div>
+  </div>
 </div>
 <script type="text/javascript">
 (function() {

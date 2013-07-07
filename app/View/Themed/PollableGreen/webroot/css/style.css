@@ -60,6 +60,11 @@ h1, h2, h3, h4, h5, h6 {
 
 .footer {
     margin-top: 30px;
+    border-top: 1px solid #D2CFCA;
+}
+
+.footer a {
+    color: #333333;
 }
 
 .margin-bottom {
@@ -72,8 +77,4 @@ h1, h2, h3, h4, h5, h6 {
 
 .divider {
     margin: 30px 0 50px 0;
-}
-
-.navbar .navbar-inner .container .find-me li a{
-    padding: 10px 5px;
 }
