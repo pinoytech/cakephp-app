@@ -26,14 +26,18 @@ body > .container {
 <body>
 <!-- end .container_12 -->
 <?php echo $this->element('top-navigation');?>
-<div class="container">
-    <div class="row">
-        <?php echo $this->element('header', array());?>
-        <div class="clearfix">&nbsp;</div>
-        <?php echo $this->fetch('content'); ?>
-        <div class="clearfix">&nbsp;</div>       
-        <?php echo $this->element('footer', array());?>
-    </div>
+<div class="container header">
+  <?php echo $this->element('header', array());?>
+  <div class="clearfix">&nbsp;</div>
+</div>
+<div class="body">
+  <div class="container">
+      <div class="row">
+          <?php echo $this->fetch('content'); ?>
+          <div class="clearfix">&nbsp;</div>       
+          <?php echo $this->element('footer', array());?>
+      </div>
+  </div>
 </div>
 <!-- end .container_16 -->
 <script>

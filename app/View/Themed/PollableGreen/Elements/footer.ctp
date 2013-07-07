@@ -1,4 +1,4 @@
-<div class="offset2 span8 navbar navbar-inverse footer">
+<div class="offset1 span10 navbar navbar-inverse footer">
     <div class="navbar-inner">
         <div class="container">
             <ul class='nav'>

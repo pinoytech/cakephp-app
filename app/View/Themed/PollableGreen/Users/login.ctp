@@ -1,4 +1,4 @@
-<div class="offset2 span8">
+<div class="offset1 span10">
     <div class="well">
         <?php echo $this->Session->flash(); ?>
         <?php echo $this->Form->create('User'); ?>

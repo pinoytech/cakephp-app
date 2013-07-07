@@ -1,4 +1,4 @@
-<div class="offset2 span8">
+<div class="offset1 span10">
   <div class="row-fluid">
       <div class="span8">
           <h3>Quick Summary</h3>
