@@ -25,6 +25,16 @@ h1, h2, h3, h4, h5, h6 {
     padding-top: 20px;
 }
 
+.sidebar {
+    font-size: 11px;
+    border: 1px solid #333333;
+}
+
+.sidebar ul li {
+    list-style: none;
+    margin-left: 0px;
+}
+
 .hero-unit h2, .hero-unit p {
     color: #FFFFFF;
 }
