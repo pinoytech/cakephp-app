@@ -12,6 +12,9 @@
                                 <li><?php echo $this->Html->link('Manage Blogs', array('plugin' => 'blog', 'controller' => 'posts', 'action' => 'index', 'admin' => true));?></li>
                                 <li><?php echo $this->Html->link('Add Post', array('plugin' => 'blog', 'controller' => 'posts', 'action' => 'add', 'admin' => true));?></li>
                                 <li class="divider"></li>
+                                <li><?php echo $this->Html->link('Manage Albums', array('plugin' => 'gallery', 'controller' => 'albums', 'action' => 'index', 'admin' => true));?></li>
+                                <li><?php echo $this->Html->link('Add Album', array('plugin' => 'gallery', 'controller' => 'albums', 'action' => 'add', 'admin' => true));?></li>
+                                <li class="divider"></li>
                                 <li><?php echo $this->Html->link('Settings', '/users/edit');?></li>
                                 <li><?php echo $this->Html->link('Logout', '/users/logout');?></li>
                             </ul>

@@ -16,7 +16,7 @@ lib/Cake/
 /dist
 /tags
 /app/webroot/files/
-/app/Views/Pages/
+/app/View/Pages/
 .settings
 .project
 .buildpath

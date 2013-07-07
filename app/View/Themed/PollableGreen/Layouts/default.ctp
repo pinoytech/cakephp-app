@@ -32,9 +32,10 @@ body > .container {
 </div>
 <div class="body">
   <div class="container">
-      <div class="row">
+      <div class="row-fluid">
           <?php echo $this->fetch('content'); ?>
-          <div class="clearfix">&nbsp;</div>       
+          <?php echo $this->fetch('sidebar');?>
+          <div class="clearfix">&nbsp;</div>
           <?php echo $this->element('footer', array());?>
       </div>
   </div>
