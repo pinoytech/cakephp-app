@@ -17,13 +17,6 @@
   </div>
 </div>
 <script type="text/javascript">
-(function() {
-  var dgh = document.createElement("script"); dgh.type = "text/javascript";dgh.async = true;
-  dgh.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'pollable.org/visitors/tracker.js?tracker=vsHHhIAtSYGxDvS';
-  var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(dgh, s);
-})();
-</script>
-<script type="text/javascript">
 
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-661176-29']);
