@@ -26,10 +26,11 @@ class UsersController extends AppController {
             var_dump($_POST);
             var_dump($this->request->data);
             pr($this->request->data);
-            if ($this->Auth->login($this->request->data)) {
-                $this->redirect($this->Auth->redirectUrl());
+            if ($this->Auth->login()) {
+                return $this->redirect($this->Auth->redirectUrl());
             } else {
                 $this->Session->setFlash(__('Invalid username or password, try again'));
+                $this->redirect($this->here);
             }
         }
     }
