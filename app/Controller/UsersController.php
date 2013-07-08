@@ -24,6 +24,7 @@ class UsersController extends AppController {
         if ($this->request->is('post')) {
             echo 'fasasda';
             var_dump($_POST);
+            var_dump($this->request->data);
             pr($this->request->data);
             if ($this->Auth->login()) {
                 $this->redirect($this->Auth->redirectUrl());
