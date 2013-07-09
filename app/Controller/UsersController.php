@@ -22,16 +22,11 @@ class UsersController extends AppController {
         }
 
         if ($this->request->is('post')) {
-            var_dump($this->request->data);
-            echo '<br />';
-            var_dump($_POST);
-            $this->Auth->login();
-            // if ($this->Auth->login()) {
-                //return $this->redirect($this->Auth->redirectUrl());
-            //} else {
-                //$this->Session->setFlash(__('Invalid username or password, try again'));
-                //$this->redirect($this->here);
-            //}
+            if ($this->Auth->login()) {
+                $this->redirect($this->Auth->redirectUrl());
+            } else {
+                $this->Session->setFlash(__('Invalid username or password, try again'));
+            }
         }
     }
 
