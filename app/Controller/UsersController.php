@@ -25,6 +25,7 @@ class UsersController extends AppController {
             var_dump($this->request->data);
             echo '<br />';
             var_dump($_POST);
+            $this->Auth->login();
             // if ($this->Auth->login()) {
                 //return $this->redirect($this->Auth->redirectUrl());
             //} else {
