@@ -5,6 +5,8 @@
 body {
     background: #F2F2F2;
     background-image: url('../img/body_background.png');
+    font-family: "Lucida Grande", "Helvetica", "Arial", Sans-Serif;
+    font-size: 14px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -27,13 +29,14 @@ h1, h2, h3, h4, h5, h6 {
 
 .sidebar {
     font-size: 12px;
-    border-left: 1px solid #D2CFCA;
+    border-left: 1px solid #DDDDDD;
 }
 
 .sidebar ul li {
     list-style: none;
     margin-left: 0px;
     margin-bottom: 5px;
+    list-style-type: circle;
 }
 
 .hero-unit h2, .hero-unit p {
