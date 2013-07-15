@@ -81,3 +81,10 @@ h1, h2, h3, h4, h5, h6 {
 .divider {
     margin: 30px 0 50px 0;
 }
+
+.series {
+    font-weight: bold;
+    padding: 10px;
+    background: #DDDDDD;
+    border: 1px dashed #333333;
+}
